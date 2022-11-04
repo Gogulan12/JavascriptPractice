@@ -221,4 +221,258 @@ lines`);
 
 // LECTURE TAKING DECISIONS IF/ELSE STATEMENTS
 
-const age = 19;
+// const age = 15;
+// // const isOldEnough = age >= 18;
+
+// if (age >= 18) {
+//   console.log("Sarah can start driving license 🚗");
+// } else {
+//   const yearsLeft = 18 - age;
+//   console.log(`Sarah is to young. Wait another ${yearsLeft} years :)`);
+// }
+
+// const birthYear = 2012;
+// let century;
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+
+// console.log(century);
+// *********************************************************************
+
+// CODING CHALLENGE 2
+
+// const markMass = 78;
+// const markHeight = 1.69;
+// const johnMass = 92;
+// const johnHeight = 1.95;
+
+// const markBMI = markMass / markHeight ** 2;
+// const johnBMI = johnMass / johnHeight ** 2;
+// console.log(markBMI, johnBMI);
+
+// if (markBMI > johnBMI) {
+//   console.log(
+//     `Mark's BMI (${markBMI.toFixed(
+//       1
+//     )}) is higher than John's (${johnBMI.toFixed(1)})!`
+//   );
+// } else {
+//   console.log(
+//     `John's BMI (${johnBMI.toFixed(
+//       1
+//     )}) is higher than Mark's (${markBMI.toFixed(1)})!`
+//   );
+// }
+// *********************************************************************
+
+// LECTURE - TYPE CONVERSION AND COERCION
+
+// const inputYear = "1991";
+// console.log(inputYear + 18);
+// display 199118
+
+// // Type conversion
+// const inputYear = "1991";
+// console.log(Number(inputYear), inputYear);
+// console.log(Number(inputYear) + 18);
+
+// // console.log(Number("Jonas")); - NAN - Not a number (invalid number but still number type)
+// console.log(typeof NaN);
+// console.log(String(23), 23);
+
+// // Type coercion
+// console.log("I am " + 23 + " years old");
+// console.log("23" - "10" - 3); // "-" turns everything to numbers "+" turns everything to strings
+// console.log("23" * "2");
+
+// let n = "1" + 1; // '11'
+// n = n - 1;
+// console.log(n);
+
+// *********************************************************************
+
+// LECTURE - TRUTHY AND FALSY VALUES
+
+// 5 falsy values:0, '', undefined, null, NaN
+
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean("Jonas"));
+// console.log(Boolean({}));
+// console.log(Boolean(""));
+
+// const money = 0;
+// if (money) {
+//   console.log("Dont spend it all");
+// } else {
+//   console.log("you should get a job");
+// }
+
+// let height;
+// if (height) {
+//   console.log("YAY! Height is defined");
+// } else {
+//   console.log("Height is UNDEFINED");
+// }
+
+// *********************************************************************
+
+// LECTURE - EQUALITY OPERATORS
+
+// const age = "18";
+// if (age === 18) console.log("you just became an adult (strict)");
+// // strict equality operator vs loose '18' == 18 is true (does type coersion)
+// if (age == 18) console.log("you just became an adult (loose)");
+
+// const favourite = Number(prompt("whats your favourite number?"));
+// console.log(favourite);
+// console.log(typeof favourite);
+
+// if (favourite === 23) {
+//   console.log("cool! 23 is an amazing number!");
+// } else if (favourite === 7) {
+//   console.log("7 is an cool number!");
+// } else {
+//   console.log("Number is not 23 or 7");
+// }
+
+// if (favourite !== 23) console.log("Why not 23?");
+
+// *********************************************************************
+
+// LECTURE - LOGICAL OPERATORS
+
+// const hasDriverLicense = true; // A
+// const hasGoodVision = true; // B
+
+// console.log(hasDriverLicense && hasGoodVision);
+// console.log(hasDriverLicense || hasGoodVision);
+// console.log(!hasDriverLicense);
+
+// const shouldDrive = hasDriverLicense && hasGoodVision;
+
+// // if (shouldDrive) {
+// //   console.log("Sarah is able to drive!");
+// // } else {
+// //   console.log("Someone else should drive");
+// // }
+
+// const isTired = false; // C
+// console.log(hasDriverLicense && hasGoodVision && isTired);
+
+// if (hasDriverLicense && hasGoodVision && !isTired) {
+//   console.log("Sarah is able to drive!");
+// } else {
+//   console.log("Someone else should drive");
+// }
+// *********************************************************************
+
+// CODING CHALLENGE 3
+
+// const Dolphins = (96 + 108 + 89) / 3;
+// const Koalas = (88 + 91 + 110) / 3;
+
+// console.log(Dolphins, Koalas);
+// if (Dolphins >= 100 || Koalas >= 100) {
+//   if (Dolphins > Koalas) {
+//     console.log("Dolphins is the winner");
+//   } else if (Dolphins < Koalas) {
+//     console.log("Koalas is the winner");
+//   } else {
+//     console.log("tie");
+//   }
+// } else {
+//   console.log("No team wins. score is less than 100");
+// }
+
+// *********************************************************************
+
+// LECTURE - THE SWITCH STATEMENT
+// const day = "thursday";
+
+// switch (day) {
+//   case "monday": //day == 'monday'
+//     console.log("plan course structure");
+//     console.log("go to coding meetup");
+//     break;
+//   case "tueday":
+//     console.log("prepare theory videos");
+//     break;
+//   case "wednesday":
+//   case "thursday":
+//     console.log("write code examples");
+//     break;
+//   case "firday":
+//     console.log("record videos");
+//     break;
+//   case "saturday":
+//   case "sunday":
+//     console.log("Enjoy the weekend :D");
+//     break;
+//   default:
+//     console.log("not a valid day!");
+// }
+
+// if (day === "monday") {
+//   console.log("plan course structure");
+//   console.log("go to coding meetup");
+// } else if (day === "tuesday") {
+//   console.log("prepare theory videos");
+// } else if (day === "wednesday" || day === "thursday") {
+//   console.log("write code examples");
+// } else if (day === "firday") {
+//   console.log("record videos");
+// } else if (day === "saturday" || day === "sunday") {
+//   console.log("Enjoy the weekend :D");
+// } else {
+//   console.log("not a valid day!");
+// }
+// *********************************************************************
+
+// LECTURE - STATEMENTS AND EXPRESSIONS
+// expression
+// 3 + 4;
+// 1991;
+// true && false && !false;
+// // statements
+// if (23 > 10) {
+//   const str = "23 is bigger";
+// }
+// console.log(`im ${2037 - 1991} years old`);
+// // template literal can only insert expressions - not statements - cant put in if statement
+
+// *********************************************************************
+
+// LECTURE - THE CONDITONAL (TERNARY) OPERATOR
+
+// const age = 23;
+// age >= 18
+//   ? console.log("I like to drink wine 🍷")
+//   : console.log("I like to drink water 💦");
+
+// const drink = age >= 18 ? "wine 🍷" : "water 💦";
+// console.log(drink);
+
+// let drink2;
+// if (age >= 18) {
+//   drink2 = "wine 🍷";
+// } else {
+//   drink2 = "water 💦";
+// }
+
+// console.log(drink2);
+
+// console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💦"}`);
+
+// *********************************************************************
+
+// CODING CHALLENGE 3
+// bill = 275;
+
+// const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value
+// ${bill + tip}`);
