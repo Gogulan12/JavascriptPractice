@@ -234,29 +234,108 @@
 // *******************************************************************
 // CODING CHALLENGE #2
 
-const calcTip = function (bill) {
-  if (bill >= 50 && bill <= 300) {
-    return bill * 0.15;
-  } else {
-    return bill * 0.2;
-  }
-};
+// const calcTip = function (bill) {
+//   if (bill >= 50 && bill <= 300) {
+//     return bill * 0.15;
+//   } else {
+//     return bill * 0.2;
+//   }
+// };
 
-const bills = [125, 555, 44];
+// const bills = [125, 555, 44];
 
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(tips);
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(tips);
 
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(total);
+// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(total);
 
 // *******************************************************************
 // LECTURE: INTRODUCTION TO OBJECTS
 
-const jonasArray = [
-  "Jonas",
-  "Schmed",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jonasArray = [
+//   "Jonas",
+//   "Schmed",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
+
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "schmed",
+//   age: 2037 - 1991,
+//   job: "teacher",
+//   Friends: ["Michael", "Peter", "Steven"],
+// };
+
+//*******************************************************************
+// LECTURE: DOT VS BRACKET NOTATION
+
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "schmed",
+//   age: 2037 - 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+// };
+// console.log(jonas);
+
+// console.log(jonas.lastName);
+// console.log(jonas["lastName"]);
+
+// const nameKey = "Name";
+// console.log(jonas["first" + nameKey]);
+// console.log(jonas["last" + nameKey]);
+
+// // console.log(jonas.'last' + nameKey) - would not work
+
+// const interestedIn = prompt(
+//   "What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends"
+// );
+// // console.log(interestedIn);
+// // // console.log(jonas.interestedIn) will give undefined because it is not a property of the jonas object
+// // console.log(jonas[interestedIn]); // expression will get evaluated
+
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log(
+//     "wrong request! Choose between firstName, lastName, age, job, and friends"
+//   );
+// }
+
+// jonas.location = "Portugal";
+// jonas["twitter"] = "@jonasschmed";
+// console.log(jonas);
+
+// // Challenge
+// // "Jonas has 3 friends, and his best friend is called Michael"
+// console.log(
+//   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+// );
+
+//*******************************************************************
+// LECTURE: OBJECT METHODS
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "schmed",
+  birthYeah: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+  // calcAge is a property of the jonas object - any function that is attached to an object is called a method
+  calcAge: function (birthYeah) {
+    return 2037 - birthYeah;
+  },
+
+  // can not be a declaration - has to be an expressions
+  // function(birthYeah) {
+  //   return 2037 - birthYeah
+  // }
+};
+
+// const calcAge = function (birthYeah) {
+//   return 2037 - birthYeah;
+// };
