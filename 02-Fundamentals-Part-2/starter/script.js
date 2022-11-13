@@ -326,16 +326,39 @@ const jonas = {
   friends: ["Michael", "Peter", "Steven"],
   hasDriversLicense: true,
   // calcAge is a property of the jonas object - any function that is attached to an object is called a method
-  calcAge: function (birthYeah) {
-    return 2037 - birthYeah;
+  // calcAge: function (birthYeah) {
+  //   return 2037 - birthYeah;
+  // },
+
+  calcAge: function () {
+    // console.log(this);
+    // return 2037 - this.birthYeah;
+    this.age = 2037 - this.birthYeah;
+    return this.age;
   },
 
   // can not be a declaration - has to be an expressions
   // function(birthYeah) {
   //   return 2037 - birthYeah
   // }
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      jonas.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
 };
 
 // const calcAge = function (birthYeah) {
 //   return 2037 - birthYeah;
 // };
+
+// console.log(jonas.calcAge(1991));
+console.log(jonas.calcAge());
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+// console.log(jonas["calcAge"](1991));
+
+// Challenge
+// "Jonas is a 46 year old teacher, and he has driver's license"
+console.log(jonas.getSummary());
