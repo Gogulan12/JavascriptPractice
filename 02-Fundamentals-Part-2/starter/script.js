@@ -318,47 +318,144 @@
 //*******************************************************************
 // LECTURE: OBJECT METHODS
 
-const jonas = {
-  firstName: "Jonas",
-  lastName: "schmed",
-  birthYeah: 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriversLicense: true,
-  // calcAge is a property of the jonas object - any function that is attached to an object is called a method
-  // calcAge: function (birthYeah) {
-  //   return 2037 - birthYeah;
-  // },
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "schmed",
+//   birthYeah: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+//   // calcAge is a property of the jonas object - any function that is attached to an object is called a method
+//   // calcAge: function (birthYeah) {
+//   //   return 2037 - birthYeah;
+//   // },
 
-  calcAge: function () {
-    // console.log(this);
-    // return 2037 - this.birthYeah;
-    this.age = 2037 - this.birthYeah;
-    return this.age;
-  },
+//   calcAge: function () {
+//     // console.log(this);
+//     // return 2037 - this.birthYeah;
+//     this.age = 2037 - this.birthYeah;
+//     return this.age;
+//   },
 
-  // can not be a declaration - has to be an expressions
-  // function(birthYeah) {
-  //   return 2037 - birthYeah
-  // }
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${
-      jonas.job
-    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
-  },
-};
-
-// const calcAge = function (birthYeah) {
-//   return 2037 - birthYeah;
+//   // can not be a declaration - has to be an expressions
+//   // function(birthYeah) {
+//   //   return 2037 - birthYeah
+//   // }
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       jonas.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//   },
 // };
 
-// console.log(jonas.calcAge(1991));
-console.log(jonas.calcAge());
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
-// console.log(jonas["calcAge"](1991));
+// // const calcAge = function (birthYeah) {
+// //   return 2037 - birthYeah;
+// // };
 
-// Challenge
-// "Jonas is a 46 year old teacher, and he has driver's license"
-console.log(jonas.getSummary());
+// // console.log(jonas.calcAge(1991));
+// console.log(jonas.calcAge());
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
+// // console.log(jonas["calcAge"](1991));
+
+// // Challenge
+// // "Jonas is a 46 year old teacher, and he has driver's license"
+// console.log(jonas.getSummary());
+
+//*******************************************************************
+// CODING CHALLENGE #3
+
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     // return mass / height ** 2;
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
+
+// const john = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     // return mass / height ** 2;
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
+
+// // console.log(mark.calcBMI(mark.mass, mark.height));
+// mark.calcBMI();
+// john.calcBMI();
+// console.log(mark.bmi, john.bmi);
+
+// if (mark.bmi > john.bmi) {
+//   console.log(
+//     `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
+//   );
+// } else if (john.bmi > mark.bmi) {
+//   console.log(
+//     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+//   );
+// }
+
+//*******************************************************************
+// LECTURE: ITERATION - THE FOR LOOP
+
+// // console.log("lifting weights repetition 1 🏋️");
+
+// // for loop keeps running while condition is TRUE
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`lifting weights repetition ${rep} 🏋️`);
+// }
+
+//*******************************************************************
+// LECTURE: LOOPING ARRAYS, BREAKING AND CONTINUING
+
+const jonasArray = [
+  "Jonas",
+  "Schmed",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+const types = [];
+
+// jonasArray[5] does not exist
+for (let i = 0; i < jonasArray.length; i++) {
+  // Reading from jonas array
+  console.log(jonasArray[i], typeof jonasArray[i]);
+
+  // Filling types array
+  // types[i] = typeof jonasArray[i];
+  types.push(typeof jonasArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log("-------ONLY STRINGS---------");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log("-------BREAK WITH NUMBER---------");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
