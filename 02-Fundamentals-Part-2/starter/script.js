@@ -416,46 +416,127 @@
 //*******************************************************************
 // LECTURE: LOOPING ARRAYS, BREAKING AND CONTINUING
 
-const jonasArray = [
-  "Jonas",
-  "Schmed",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-  true,
-];
+// const jonasArray = [
+//   "Jonas",
+//   "Schmed",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
 
-const types = [];
+// const types = [];
 
-// jonasArray[5] does not exist
-for (let i = 0; i < jonasArray.length; i++) {
-  // Reading from jonas array
-  console.log(jonasArray[i], typeof jonasArray[i]);
+// // jonasArray[5] does not exist
+// for (let i = 0; i < jonasArray.length; i++) {
+//   // Reading from jonas array
+//   console.log(jonasArray[i], typeof jonasArray[i]);
 
-  // Filling types array
-  // types[i] = typeof jonasArray[i];
-  types.push(typeof jonasArray[i]);
+//   // Filling types array
+//   // types[i] = typeof jonasArray[i];
+//   types.push(typeof jonasArray[i]);
+// }
+
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+// console.log(ages);
+
+// // continue and break
+// console.log("-------ONLY STRINGS---------");
+// for (let i = 0; i < jonasArray.length; i++) {
+//   if (typeof jonasArray[i] !== "string") continue;
+//   console.log(jonasArray[i], typeof jonasArray[i]);
+// }
+
+// console.log("-------BREAK WITH NUMBER---------");
+// for (let i = 0; i < jonasArray.length; i++) {
+//   if (typeof jonasArray[i] === "number") break;
+//   console.log(jonasArray[i], typeof jonasArray[i]);
+// }
+
+//*******************************************************************
+// LECTURE: LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+// const jonasArray = [
+//   "Jonas",
+//   "Schmed",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+
+// for (let i = jonasArray.length - 1; i >= 0; i--) {
+//   console.log(i, jonasArray[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`------------starting exercise ${exercise}`);
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}🏋️`);
+//   }
+// }
+
+//*******************************************************************
+// LECTURE: THE WHILE LOOP
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`lifting weights repetition ${rep} 🏋️`);
+// }
+
+// ///// while loop
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`lifting weights repetition ${rep} 🏋️`);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+// }
+
+//*******************************************************************
+// CODING CHALLENGE #4
+
+const calcTip = function (bill) {
+  if (bill >= 50 && bill <= 300) {
+    return bill * 0.15;
+  } else {
+    return bill * 0.2;
+  }
+};
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
 
-console.log(types);
+console.log(bills, tips, totals);
 
-const years = [1991, 2007, 1969, 2020];
-const ages = [];
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  // console.log(sum);
+  return sum / arr.length;
+};
 
-for (let i = 0; i < years.length; i++) {
-  ages.push(2037 - years[i]);
-}
-console.log(ages);
-
-// continue and break
-console.log("-------ONLY STRINGS---------");
-for (let i = 0; i < jonasArray.length; i++) {
-  if (typeof jonasArray[i] !== "string") continue;
-  console.log(jonasArray[i], typeof jonasArray[i]);
-}
-
-console.log("-------BREAK WITH NUMBER---------");
-for (let i = 0; i < jonasArray.length; i++) {
-  if (typeof jonasArray[i] === "number") break;
-  console.log(jonasArray[i], typeof jonasArray[i]);
-}
+console.log(calcAverage([2, 3, 7]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
